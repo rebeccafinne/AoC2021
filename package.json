@@ -6,6 +6,7 @@
   "repository": "https://github.com/rebeccafinne/AoC2021.git",
   "author": "<rebecca.finne@polestar.com>",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "fs": "^0.0.1-security"
   },
