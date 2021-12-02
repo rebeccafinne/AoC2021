@@ -2,11 +2,14 @@ import { readFile } from "fs";
 readFile("Day2/input.txt", function (err, data) {
   if (err) throw err;
 
-  let arr = data.toString().replace(/\r\n/g, "\n").split("\n");
+  let arr = data
+    .toString()
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .map((item) => item.split(" "));
 
-  let newArr = arr.map((item) => item.split(" "));
   let sum = { horizontal: 0, vertical: 0 };
-  newArr.forEach((item) => {
+  arr.forEach((item) => {
     if (item[0] === "forward") {
       sum.horizontal += parseInt(item[1]);
     } else if (item[0] === "down") {
