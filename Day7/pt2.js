@@ -8,17 +8,13 @@ readFile("Day7/input.txt", function (err, data) {
     .split(",")
     .map((item) => parseInt(item));
 
-  console.log(arr);
-  const minValue = Math.min(...arr);
   const maxValue = Math.max(...arr);
-
-  console.log(minValue, maxValue);
 
   let currentMinimalCost = 1000000000;
 
-  for (let i = 0; i < maxValue; i++) {
+  for (let i = 0; i <= maxValue; i++) {
     const res = arr.reduce((sum, curr) => {
-      sum += Math.abs(curr - i);
+      sum += (Math.abs(curr - i) * (Math.abs(curr - i) + 1)) / 2;
       return sum;
     }, 0);
     if (res < currentMinimalCost) {
